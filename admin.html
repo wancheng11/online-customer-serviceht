@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>客服后台系统</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- 左侧会话列表 -->
+        <div class="sessions-panel">
+            <div class="sessions-header">
+                <h2>会话列表</h2>
+                <div class="online-status">
+                    <span class="status-dot online"></span>
+                    <span class="status-text">在线</span>
+                </div>
+            </div>
+            <div class="sessions-search">
+                <input type="text" placeholder="搜索用户...">
+            </div>
+            <div class="sessions-list" id="sessionsList">
+                <!-- 会话列表项会通过 JavaScript 动态添加 -->
+            </div>
+        </div>
+
+        <!-- 右侧聊天区域 -->
+        <div class="chat-panel">
+            <!-- 聊天头部 -->
+            <div class="chat-header">
+                <div class="user-info">
+                    <span class="user-name">未选择用户</span>
+                    <span class="user-id"></span>
+                </div>
+                <div class="chat-actions">
+                    <button class="action-btn" id="viewOrderBtn">查看订单</button>
+                    <button class="action-btn" id="endSessionBtn">结束会话</button>
+                </div>
+            </div>
+
+            <!-- 聊天消息区域 -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- 消息会通过 JavaScript 动态添加 -->
+            </div>
+
+            <!-- 输入区域 -->
+            <div class="chat-input">
+                <div class="input-toolbar">
+                    <button class="tool-btn" id="uploadImageBtn">
+                        <span class="icon">🖼️</span>
+                    </button>
+                    <button class="tool-btn" id="quickReplyBtn">
+                        <span class="icon">💬</span>
+                    </button>
+                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                </div>
+                <textarea id="messageInput" placeholder="请输入消息..."></textarea>
+                <button class="send-button" id="sendButton">发送</button>
+            </div>
+        </div>
+
+        <!-- 快捷回复面板 -->
+        <div class="quick-reply-panel" id="quickReplyPanel">
+            <div class="panel-header">
+                <h3>快捷回复</h3>
+                <button class="close-btn">×</button>
+            </div>
+            <div class="quick-replies">
+                <div class="reply-item">您好，请问有什么可以帮您的？</div>
+                <div class="reply-item">好的，我明白了，请稍等我为您处理。</div>
+                <div class="reply-item">请问还有其他问题需要帮助吗？</div>
+                <div class="reply-item">非常抱歉给您带来不便。</div>
+                <div class="reply-item">感谢您的反馈，我们会继续改进服务。</div>
+            </div>
+        </div>
+
+        <!-- 订单查看面板 -->
+        <div class="order-panel" id="orderPanel">
+            <div class="panel-header">
+                <h3>用户订单</h3>
+                <button class="close-btn">×</button>
+            </div>
+            <div class="order-list">
+                <!-- 订单列表会通过 JavaScript 动态添加 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html> 

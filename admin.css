@@ -1,0 +1,371 @@
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    height: 100vh;
+}
+
+.admin-container {
+    display: flex;
+    height: 100vh;
+    background: white;
+}
+
+/* 左侧会话列表样式 */
+.sessions-panel {
+    width: 300px;
+    border-right: 1px solid #e6e6e6;
+    display: flex;
+    flex-direction: column;
+}
+
+.sessions-header {
+    padding: 15px;
+    border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sessions-header h2 {
+    font-size: 16px;
+    color: #333;
+}
+
+.online-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-dot.online {
+    background: #07C160;
+}
+
+.status-text {
+    font-size: 14px;
+    color: #666;
+}
+
+.sessions-search {
+    padding: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.sessions-search input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.sessions-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.session-item {
+    padding: 12px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.session-item:hover {
+    background-color: #f5f5f5;
+}
+
+.session-item.active {
+    background-color: #e6f3ff;
+}
+
+.session-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.session-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.session-info {
+    flex: 1;
+}
+
+.session-name {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.session-preview {
+    font-size: 12px;
+    color: #999;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 右侧聊天区域样式 */
+.chat-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    padding: 15px;
+    border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.user-id {
+    font-size: 12px;
+    color: #999;
+    margin-top: 2px;
+}
+
+.chat-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background: #f5f5f5;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f5f5f5;
+}
+
+.chat-input {
+    padding: 15px;
+    border-top: 1px solid #e6e6e6;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-toolbar {
+    display: flex;
+    gap: 10px;
+}
+
+.tool-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.tool-btn:hover {
+    background: #f5f5f5;
+}
+
+.tool-btn .icon {
+    font-size: 18px;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+    font-size: 14px;
+}
+
+.send-button {
+    align-self: flex-end;
+    padding: 8px 20px;
+    background: #1E90FF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.send-button:hover {
+    background: #187bcd;
+}
+
+/* 快捷回复面板样式 */
+.quick-reply-panel {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.quick-reply-panel.show {
+    display: block;
+}
+
+.panel-header {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-header h3 {
+    font-size: 15px;
+    color: #333;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #999;
+    cursor: pointer;
+}
+
+.quick-replies {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.reply-item {
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.reply-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* 订单查看面板样式 */
+.order-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 600px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.order-panel.show {
+    display: block;
+}
+
+.order-list {
+    padding: 15px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* 消息样式 */
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    max-width: 80%;
+}
+
+.message.user {
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.message-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.message-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.message-content {
+    padding: 10px 15px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.message.user .message-content {
+    background: #e6f3ff;
+    color: #333;
+}
+
+.message.service .message-content {
+    background: white;
+    color: #333;
+}
+
+.message-time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 4px;
+    text-align: right;
+} 
